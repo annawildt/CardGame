@@ -1,6 +1,46 @@
 package com.wildt;
 
+import java.util.Random;
+
 public class PlayingCardDeck {
+    public PlayingCard[] cardDeck;
+    int deckNumber;
+    int firstCard = 0;
+
+    public PlayingCardDeck() {
+
+        deckNumber = 51;
+        cardDeck = new PlayingCard[52];
+        int index = 0;
+
+        //Creates PlayingCard-objects into cardDeck-Array with all numbers of cards for each color
+        for (int suit = 0; suit <= PlayingCard.cardSuit.length-1; suit++) {
+            for (int rank = 0; rank <= PlayingCard.cardRank.length-1; rank++) {
+                cardDeck[index] = new PlayingCard(suit, rank, true);
+                index++;
+            }
+        }
+    }
+
+    public void shuffleArray(PlayingCard[] arr) {
+
+        Random rand = new Random();
+
+        for (int i = arr.length - 1; i > 0; i--) {
+            int index = rand.nextInt(i + 1);
+
+            PlayingCard temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public PlayingCard getFirstCard() {
+        //Method to get first card and then iterate through the deck
+        PlayingCard drawnCard = cardDeck[firstCard];
+        firstCard++;
+        return drawnCard;
+    }
 }
 
 /* represent a card deck of 52 card of the type PlayingCard
