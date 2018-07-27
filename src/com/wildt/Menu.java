@@ -4,18 +4,19 @@ import java.util.Scanner;
 
 public class Menu {
     public static void startMenu(){
-        printGameMenu();
-
-        Scanner input = new Scanner(System.in);
-        int answer = input.nextInt();
 
         while(true) {
+            printGameMenu();
+
+            Scanner input = new Scanner(System.in);
+            int answer = input.nextInt();
+
             switch (answer) {
                 case 1:
-                    PlayingCardGame.playGame();
+                    PlayingCardGame.initializeDeck();
                     break;
                 case 2:
-                    //Game rules
+                    ReadTextFile.rules();
                     break;
                 case 3:
                     //Game statistics

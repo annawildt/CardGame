@@ -17,7 +17,7 @@ public class PlayingCard {
         this.hidden = hidden;
     }
 
-    public String generateCard() {
+    public String getCardString() {
         //Method to return a string with the cards color and number
         return cardRank[rank] + " of " + cardSuit[suit];
     }

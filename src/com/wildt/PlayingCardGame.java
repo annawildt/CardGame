@@ -4,8 +4,15 @@ import java.util.Scanner;
 
 public class PlayingCardGame {
 
-    public static void playGame() {
+    public static void initializeDeck() {
         PlayingCardDeck deck = createNewDeck();
+
+        playGame(deck);
+    }
+
+    public static void playGame(PlayingCardDeck useThisDeck) {
+
+        PlayingCardDeck deck = useThisDeck;
 
         System.out.println("\nYou and the computer have both pulled a card each. " +
                 "Guess if your card is higher or lower than your opponent's.");
@@ -37,7 +44,7 @@ public class PlayingCardGame {
             System.out.println("You lost!\nYou guessed that your card was higher but the computer's card was higher.");
         }
 
-        replayGame();
+        replayGame(deck);
     }
 
     private static boolean userGuess() {
@@ -82,11 +89,11 @@ public class PlayingCardGame {
     }
 
     private static void printCurrentGameStats (PlayingCard computerCard, PlayingCard playerCard) {
-        System.out.println("\nYour card is " + playerCard.generateCard());
+        System.out.println("\nYour card is " + playerCard.getCardString());
         if (computerCard.hidden) {
             System.out.println("Computer's card is ??????");
         } else {
-            System.out.println("Computer's card is " + computerCard.generateCard());
+            System.out.println("Computer's card is " + computerCard.getCardString());
         }
     }
 
@@ -97,7 +104,9 @@ public class PlayingCardGame {
         return deck;
     }
 
-    private static void replayGame() {
+    private static void replayGame(PlayingCardDeck replayDeck) {
+
+        PlayingCardDeck deck = replayDeck;
 
         System.out.println("\nReplay game? y/n");
 
@@ -106,7 +115,7 @@ public class PlayingCardGame {
             char answer = input.next().charAt(0);
 
             if (answer == 'y') {
-                playGame();
+                playGame(deck);
                 break;
             } else if (answer == 'n'){
                 Menu.startMenu();

@@ -41,6 +41,23 @@ public class PlayingCardDeck {
         firstCard++;
         return drawnCard;
     }
+
+    public PlayingCardDeck putCardBack(PlayingCardDeck deck, PlayingCard putThisBack) {
+        PlayingCardDeck fullDeck = deck;
+        PlayingCard atBottom = putThisBack;
+
+
+        for (int i = 0; i < fullDeck.cardDeck.length; i++) {
+            PlayingCard temp = fullDeck.cardDeck[i];
+
+            for (int j = (i - 1); j >= 0; j--) {
+                fullDeck.cardDeck[i + 1] = fullDeck.cardDeck[i];
+            }
+
+            fullDeck.cardDeck[i] = temp;
+        }
+        return fullDeck;
+    }
 }
 
 /* represent a card deck of 52 card of the type PlayingCard

@@ -1,0 +1,10 @@
+--------------------------------
+	    RULES
+The player (you) and the computer
+will both get a card each.
+
+You then get to guess if your card is
+higher or lower than the computers.
+
+If you guess correctly, you win!
+--------------------------------
