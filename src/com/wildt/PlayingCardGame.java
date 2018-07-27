@@ -1,5 +1,6 @@
 package com.wildt;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class PlayingCardGame {
@@ -17,8 +18,16 @@ public class PlayingCardGame {
         System.out.println("\nYou and the computer have both pulled a card each. " +
                 "Guess if your card is higher or lower than your opponent's.");
 
-        PlayingCard computerCard = deck.getFirstCard();
-        PlayingCard playerCard = deck.getFirstCard();
+        PlayingCard computerCard = deck.getFirstCard(deck);
+        if (computerCard == null) {
+            System.out.println("Deck is empty. Initializing a new deck.");
+            initializeDeck();
+        }
+        PlayingCard playerCard = deck.getFirstCard(deck);
+        if (playerCard == null) {
+            System.out.println("Deck is empty. Initializing a new deck.");
+            initializeDeck();
+        }
         playerCard.hidden = false;
 
         PlayingCard winningCard = winningCard(computerCard, playerCard);
@@ -54,12 +63,12 @@ public class PlayingCardGame {
         //Loop until the user input a valid answer
         while (true) {
             Scanner input = new Scanner(System.in);
-            int answer = input.nextInt();
+            String answer = input.next();
 
-            if (answer == 1) {
+            if (answer.equals("1")) {
                 guessHigher = true;
                 break;
-            } else if (answer == 2) {
+            } else if (answer.equals("2")) {
                 guessHigher = false;
                 break;
             } else {
@@ -99,14 +108,12 @@ public class PlayingCardGame {
 
     private static PlayingCardDeck createNewDeck() {
         PlayingCardDeck deck = new PlayingCardDeck();
-        deck.shuffleArray(deck.cardDeck);
+        Collections.shuffle(deck.cardDeck);
 
         return deck;
     }
 
     private static void replayGame(PlayingCardDeck replayDeck) {
-
-        PlayingCardDeck deck = replayDeck;
 
         System.out.println("\nReplay game? y/n");
 
@@ -115,7 +122,7 @@ public class PlayingCardGame {
             char answer = input.next().charAt(0);
 
             if (answer == 'y') {
-                playGame(deck);
+                playGame(replayDeck);
                 break;
             } else if (answer == 'n'){
                 Menu.startMenu();
