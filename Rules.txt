@@ -1,5 +1,5 @@
 --------------------------------
-	    RULES
+	         RULES
 The player (you) and the computer
 will both get a card each.
 
@@ -7,4 +7,8 @@ You then get to guess if your card is
 higher or lower than the computers.
 
 If you guess correctly, you win!
+
+If you choose to replay you will play
+through the entire deck. Start a new game
+at the start menu for a newly shuffled deck.
 --------------------------------

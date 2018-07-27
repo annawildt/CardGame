@@ -28,6 +28,7 @@ public class PlayingCardGame {
             System.out.println("Deck is empty. Initializing a new deck.");
             initializeDeck();
         }
+
         playerCard.hidden = false;
 
         PlayingCard winningCard = winningCard(computerCard, playerCard);
@@ -39,28 +40,36 @@ public class PlayingCardGame {
                 "2. My card is lower.");
 
         boolean guessHigher = userGuess();
-
         computerCard.hidden = false;
-        printCurrentGameStats(computerCard, playerCard);
 
+        printCurrentGameStats(computerCard, playerCard);
+        printEndGameStats(guessHigher, winningCard, computerCard, playerCard);
+        replayGame(deck);
+    }
+    private static void printEndGameStats
+            (boolean guessHigher, PlayingCard winningCard, PlayingCard computerCard, PlayingCard playerCard) {
         if (!guessHigher && winningCard == computerCard) {
             System.out.println("You won!\nYou correctly guessed that your card was lower than the computer's.");
+            ReadTextFile.writeGameStatistics(1, 0);
+
         } else if (guessHigher && winningCard == playerCard) {
             System.out.println("You won!\nYou correctly guessed that your card was higher than the computer's.");
+            ReadTextFile.writeGameStatistics(1, 0);
+
         } else if (!guessHigher && winningCard == playerCard) {
             System.out.println("You lost!\nYou guessed that the computer's card was higher but your card was higher.");
+            ReadTextFile.writeGameStatistics(0, 1);
+
         } else if (guessHigher && winningCard == computerCard) {
             System.out.println("You lost!\nYou guessed that your card was higher but the computer's card was higher.");
+            ReadTextFile.writeGameStatistics(0, 1);
         }
-
-        replayGame(deck);
     }
 
     private static boolean userGuess() {
         //Method to return a boolean depending on the user's input.
         boolean guessHigher;
 
-        //Loop until the user input a valid answer
         while (true) {
             Scanner input = new Scanner(System.in);
             String answer = input.next();
@@ -98,11 +107,18 @@ public class PlayingCardGame {
     }
 
     private static void printCurrentGameStats (PlayingCard computerCard, PlayingCard playerCard) {
-        System.out.println("\nYour card is " + playerCard.getCardString());
+        //Only shows card with hidden=false
+
+        if (playerCard.hidden) {
+            System.out.println("Your card is ??????");
+        } else {
+            System.out.println("Your card is " + playerCard.getCardAsString());
+        }
+
         if (computerCard.hidden) {
             System.out.println("Computer's card is ??????");
         } else {
-            System.out.println("Computer's card is " + computerCard.getCardString());
+            System.out.println("Computer's card is " + computerCard.getCardAsString());
         }
     }
 
@@ -134,11 +150,3 @@ public class PlayingCardGame {
         }
     }
 }
-
-/*
-Create a shuffled deck to use
-Choose between 1 or 2 players (if necessary)
-Set conditions for win/loss/draw
-Save history like high score, amount of times played etc in a text-file.
-Create a menu with the following: play game, show rules, show statistics (text-file), quit game (system exit)
- */

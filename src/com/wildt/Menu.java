@@ -1,9 +1,10 @@
 package com.wildt;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public static void startMenu(){
+    public static void startMenu() {
 
         while(true) {
             printGameMenu();
@@ -16,10 +17,10 @@ public class Menu {
                     PlayingCardGame.initializeDeck();
                     break;
                 case 2:
-                    ReadTextFile.rules();
+                    ReadTextFile.printRules();
                     break;
                 case 3:
-                    //Game statistics
+                    ReadTextFile.printGameStatistics();
                     break;
                 case 4:
                     sureToQuit();
