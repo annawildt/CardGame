@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ebc1c94-73f6-4578-978d-3fd8979384a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Rules.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wildt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wildt/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wildt/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wildt/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wildt/PlayingCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wildt/PlayingCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wildt/PlayingCardDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wildt/PlayingCardDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wildt/PlayingCardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wildt/PlayingCardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wildt/ReadTextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wildt/ReadTextFile.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +14,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/wildt/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            <state relative-caret-position="64">
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <folding>
+                <element signature="e#116#117#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayingCard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayingCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/wildt/PlayingCard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -96,13 +93,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/wildt/PlayingCardDeck.java" />
-        <option value="$PROJECT_DIR$/src/com/wildt/Main.java" />
         <option value="$PROJECT_DIR$/src/com/wildt/Menu.java" />
         <option value="$PROJECT_DIR$/gamestats.txt" />
         <option value="$PROJECT_DIR$/src/com/wildt/PlayingCardGame.java" />
         <option value="$PROJECT_DIR$/Rules.txt" />
         <option value="$PROJECT_DIR$/src/com/wildt/ReadTextFile.java" />
         <option value="$PROJECT_DIR$/src/com/wildt/PlayingCard.java" />
+        <option value="$PROJECT_DIR$/src/com/wildt/Main.java" />
       </list>
     </option>
   </component>
@@ -232,7 +229,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1753" height="954" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="8" />
@@ -266,13 +262,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/wildt/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wildt/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
@@ -334,6 +323,16 @@
           <folding>
             <element signature="e#510#511#0" expanded="true" />
             <element signature="e#573#574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wildt/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding>
+            <element signature="e#116#117#0" expanded="true" />
           </folding>
         </state>
       </provider>
