@@ -91,11 +91,8 @@ public class ReadTextFile {
             inputStream = new BufferedReader((new FileReader("temp.txt")));
             outputStream = new PrintWriter(new BufferedWriter(new FileWriter("gamestats.txt")));
 
-            System.out.println("Write to file now!!!");
             while (true) {
                 String row = inputStream.readLine();
-                System.out.print("row: ");
-                System.out.println(row);
                 if (row == null) {
                     break;
                 }
