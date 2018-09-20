@@ -1,1 +1,2 @@
-Card game for Academy Java course.
+#CardGame
+Created during Academy Java course (summer 2018)
